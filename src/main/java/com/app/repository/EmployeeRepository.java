@@ -9,6 +9,6 @@ import com.app.model.Employee;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	
 	
-//	public Employee getbyname();
+	public Employee getbyname();
 
 }
