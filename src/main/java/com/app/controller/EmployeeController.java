@@ -53,6 +53,16 @@ public class EmployeeController {
         employeeService.deleteEmployee(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+    
+    @GetMapping("/byCity")
+    public ResponseEntity<List<Employee>> getEmployeeByCity(@RequestParam String city) {
+    	List<Employee> employee = employeeService.getEmployeeByCity(city);
+        if (employee != null) {
+            return new ResponseEntity<>(employee, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }
 
 

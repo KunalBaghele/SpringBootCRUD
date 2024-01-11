@@ -41,5 +41,7 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
     }
 	
-	
+	public List<Employee> getEmployeeByCity(String city) {
+        return employeeRepository.findByCity(city);
+	}
 }
